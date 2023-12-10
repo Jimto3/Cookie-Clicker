@@ -36,7 +36,6 @@ function updateShop(type) {
   let cursorsPerSecond = 0;
   for (let i = 0; i < allUpgrades.length; i++) {
     cursorsPerSecond += value[i] * statistics.upgrades[allUpgrades[i]];
-    console.log(value[i], statistics.upgrades[allUpgrades[i]]);
     if (type == allUpgrades[i] && cursorAmount >= cost[i]) {
       cursorAmount -= Math.round(cost[i]);
       cost[i] = Math.round(cost[i] * 1.4);
@@ -85,8 +84,6 @@ setInterval(() => {
 
 // set all values on reload
 if (localStorage.getItem("statistics")) {
-  console.log("uh oh");
-  console.log(statistics);
   //if there is localStorage
   statistics = JSON.parse(localStorage.getItem("statistics"));
   cursorAmount = statistics.cursorAmount;
@@ -101,4 +98,8 @@ if (localStorage.getItem("statistics")) {
     document.getElementById(allUpgrades[i]).textContent =
       statistics.upgrades[allUpgrades[i]];
   }
+}
+for (let i = 0; i < allUpgrades.length; i++) {
+  let upgradePrice = document.getElementById(`${allUpgrades[i]}Price`);
+  upgradePrice.textContent = `${cost[i]} Cursors`;
 }
