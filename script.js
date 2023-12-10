@@ -2,7 +2,7 @@ const allUpgrades = [`cookie`, `grandpa`, `barn`, `mine`, `factory`];
 const value = [1, 5, 50, 250, 1500];
 const cost = [];
 const counter = document.getElementById("counter");
-let statistics = { cursorAmount: 0 };
+let statistics = { cursorAmount: 0, cps: 0 };
 statistics.upgrades = {};
 statistics.cost = [];
 let cursor = document.getElementById("cursor");
@@ -11,7 +11,6 @@ let cursorsPerSecond = 0;
 let click_value = 1;
 let click_multiplyer = 1;
 let cps = document.getElementById("cps");
-localStorage.clear();
 
 for (let i = 0; i < allUpgrades.length; i++) {
   statistics.upgrades[allUpgrades[i]] = 0;
@@ -86,9 +85,12 @@ setInterval(() => {
 
 // set all values on reload
 if (localStorage.getItem("statistics")) {
+  console.log("uh oh");
+  console.log(statistics);
   //if there is localStorage
   statistics = JSON.parse(localStorage.getItem("statistics"));
   cursorAmount = statistics.cursorAmount;
+  cursorsPerSecond = statistics.cps;
   counter.textContent = `${cursorAmount} Cursors`;
   for (let i = 0; i < allUpgrades.length; i++) {
     if (statistics.cost) {
