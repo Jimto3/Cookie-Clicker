@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="layout">
+      <div class="background"></div>
+
+      <div class="cursorCount-Box box">
+        <div class="cursorCount" id="counter">0 Cursors</div>
+        <div class="cursorCount" id="cps">0 CPS</div>
+      </div>
+
+      <div class="cursor-pos box">
+        <img class="glitchy" id="cursor" src="cursor.png" />
+      </div>
+
+      <!-------------------------------------Option Menu------------------------------------->
+
+      <div class="optionMenu">
+        <button onclick="resetData()" id="resetButton">Reset Data</button>
+      </div>
+
+      <!-------------------------------------Upgrade View------------------------------------->
+
+      <div class="upgradeView"></div>
+
+      <!-------------------------------------Upgrade List------------------------------------->
+
+      <div class="upgrades">
+        <div class="upgradeItems"></div>
+      </div>
+
+      <!-------------------------------------Shop------------------------------------->
+
+      <div class="shop">
+        <div>
+          <div onclick="updateShop(`cookie`)" class="upgradeContent">
+            <img class="shopLogo" src="cookie.png" />
+            <p id="cookie">0</p>
+            <h2>Cookie</h2>
+            <h3 class="cost" id="cookiePrice">0</h3>
+          </div>
+        </div>
+
+        <div>
+          <div onclick="updateShop(`grandpa`)" class="upgradeContent">
+            <img class="shopLogo" src="grandpa.png" />
+            <p id="grandpa">0</p>
+            <h2>Grandpa</h2>
+            <h3 class="cost" id="grandpaPrice">0</h3>
+          </div>
+        </div>
+
+        <div>
+          <div onclick="updateShop(`barn`)" class="upgradeContent">
+            <img class="shopLogo" src="barn.png" />
+            <p id="barn">0</p>
+            <h2>Barn</h2>
+            <h3 class="cost" id="barnPrice">0</h3>
+          </div>
+        </div>
+
+        <div>
+          <div onclick="updateShop(`mine`)" class="upgradeContent">
+            <img class="shopLogo" src="mine.png" />
+            <p id="mine">0</p>
+            <h2>Mine</h2>
+            <h3 class="cost" id="minePrice">0</h3>
+          </div>
+        </div>
+
+        <div>
+          <div onclick="updateShop(`factory`)" class="upgradeContent">
+            <img class="shopLogo" src="factory.png" />
+            <p id="factory">0</p>
+            <h2>Factory</h2>
+            <h3 class="cost" id="factoryPrice">0</h3>
+          </div>
+        </div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </body>
+</html>
