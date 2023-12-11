@@ -19,6 +19,7 @@ body {
   grid-template-rows: 2fr 6fr 2fr;
   border: 2vw solid red;
   z-index: 10;
+  font-size: 12px;
 }
 
 .layout div {
@@ -66,17 +67,6 @@ body {
   height: fit-content;
   display: flex;
   justify-self: center;
-}
-
-.cursor-pos .glitch {
-  content: url("corrupt-cursor.png");
-  animation: glitchy 1s infinite;
-}
-
-@keyframes glitchy {
-  0% {
-    translate: 10px 20px;
-  }
 }
 
 /* .box {
@@ -237,4 +227,11 @@ div .notAfford {
   background: black;
   color: white;
   border: 5px solid white;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 4fr 5fr 5fr;
+    grid-template-rows: 2fr 6fr 2fr;
+  }
 }

@@ -1,5 +1,5 @@
 const allUpgrades = [`cookie`, `grandpa`, `barn`, `mine`, `factory`];
-const value = [1, 5, 50, 250, 1500];
+const value = [1, 5, 50, 250, 1500]; //only need to update allUpgrades list and value on upgrade creation
 const cost = [];
 const counter = document.getElementById("counter");
 let statistics = { cursorAmount: 0, cps: 0 };
@@ -80,7 +80,7 @@ setInterval(() => {
   statistics.cps = cursorsPerSecond;
   counter.textContent = `${cursorAmount} Cursors`;
   cps.textContent = `${cursorsPerSecond} CPS`;
-}, 500);
+}, 1000);
 
 // set all values on reload
 if (localStorage.getItem("statistics")) {
